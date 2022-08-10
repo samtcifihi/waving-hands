@@ -1,7 +1,7 @@
 compile:
 	go build -o "./bin/waving-hands" ./src/main
 
-test: compile
+run: compile
 	./bin/waving-hands
 
 clean:
