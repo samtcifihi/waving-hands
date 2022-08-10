@@ -1,4 +1,6 @@
 package main
+// TODO: comment code
+// TODO: refactor to "gamestate" package (probably prereq'd to update GOPATH)
 
 type game_state struct {
 	players []player_state
@@ -21,6 +23,7 @@ type spell struct {
 	is_enchantment bool
 }
 
+// TODO: upgrade to go 1.18+; import "github.com/OlegStotsky/maybe.go"; gesture_chain [][2]Maybe[gesture];
 type gesture_chain struct {
 	incantation   []gesture
 	is_both_hands []bool
