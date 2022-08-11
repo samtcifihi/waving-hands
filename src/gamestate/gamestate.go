@@ -1,4 +1,5 @@
 package gamestate
+
 // TODO: refactor to "gamestate" package (probably prereq'd to update GOPATH)
 // TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
 
