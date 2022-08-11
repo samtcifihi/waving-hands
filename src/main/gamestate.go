@@ -1,5 +1,5 @@
 package main
-// TODO: comment code
+// TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
 // TODO: refactor to "gamestate" package (probably prereq'd to update GOPATH)
 
 type game_state struct {
@@ -91,6 +91,7 @@ func New_Player_State() *player_state {
 	return p
 }
 
+// TODO: rename to "String" or "To_String" or simlar, according to precedent
 // Format() returns a representation of the gamestate formatted for display
 func (g game_state) Format() string {
 	// cruft:
