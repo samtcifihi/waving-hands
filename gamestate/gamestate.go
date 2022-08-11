@@ -32,14 +32,16 @@ type Gesture_Chain [][2]maybe.Maybe[Gesture]
 type Gesture int
 
 const (
-	fingers Gesture = iota
+	nothing Gesture = iota // non-gesture
+	stab                   // non-gesture
+
+	// the gestures
+	clap // both hands must clap to be valid
+	fingers
 	palm
 	snap
 	wave
 	digit
-	clap
-	stab
-	nothing
 )
 
 type Effect int
