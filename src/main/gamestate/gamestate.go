@@ -1,6 +1,6 @@
-package main
-// TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
+package gamestate
 // TODO: refactor to "gamestate" package (probably prereq'd to update GOPATH)
+// TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
 
 type game_state struct {
 	players []player_state
@@ -92,8 +92,8 @@ func New_Player_State() *player_state {
 }
 
 // TODO: rename to "String" or "To_String" or simlar, according to precedent
-// Format() returns a representation of the gamestate formatted for display
-func (g game_state) Format() string {
+// String() returns a representation of the gamestate formatted for display
+func (g game_state) String() string {
 	// cruft:
 	// p0_left *uint64, p0_right *uint64, p1_left *uint64, p1_right *uint64
 
