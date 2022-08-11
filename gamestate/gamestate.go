@@ -5,6 +5,7 @@ import (
 )
 
 // TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
+// TODO: implement gesture_chain with maybe.Maybe
 
 type game_state struct {
 	players []player_state
