@@ -1,9 +1,9 @@
 compile: format
-	go build -o "./bin/waving-hands" ./src/main.go
+	go build -o "./bin/waving-hands" ./main.go
 
 format:
-	gofmt -w ./src/*.*
-	gofmt -w ./src/*/*.*
+	gofmt -w ./main.go
+	gofmt -w ./gamestate/*.*
 
 run: compile
 	./bin/waving-hands

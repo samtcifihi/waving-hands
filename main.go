@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/samtcifihi/waving-hands/src/gamestate"
+	"github.com/samtcifihi/waving-hands/gamestate"
 )
 
 func main() {

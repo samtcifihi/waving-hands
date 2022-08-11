@@ -1,6 +1,9 @@
 package gamestate
 
-// TODO: refactor to "gamestate" package (probably prereq'd to update GOPATH)
+import (
+	"github.com/OlegStotsky/go-monads/maybe"
+)
+
 // TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
 
 type game_state struct {
@@ -10,9 +13,8 @@ type game_state struct {
 }
 
 type player_state struct {
-	hp     int
-	l_hand gesture_chain
-	r_hand gesture_chain
+	hp              int
+	gesture_history gesture_chain
 	// controlled monsters
 	// effects
 }
@@ -24,11 +26,7 @@ type spell struct {
 	is_enchantment bool
 }
 
-// TODO: upgrade to go 1.18+; import "github.com/OlegStotsky/maybe.go"; gesture_chain [][2]Maybe[gesture];
-type gesture_chain struct {
-	incantation   []gesture
-	is_both_hands []bool
-}
+type gesture_chain [][2]maybe.Maybe[gesture]
 
 type gesture int
 
@@ -92,7 +90,6 @@ func New_Player_State() *player_state {
 	return p
 }
 
-// TODO: rename to "String" or "To_String" or simlar, according to precedent
 // String() returns a representation of the gamestate formatted for display
 func (g game_state) String() string {
 	// cruft:
