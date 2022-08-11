@@ -7,32 +7,32 @@ import (
 // TODO: comment code; use doccomments, referencing best practice; make null value meaningful for types;
 // TODO: implement gesture_chain with maybe.Maybe
 
-type game_state struct {
-	players []player_state
+type Game_State struct {
+	players []Player_State
 	// neutral battlefield effects
-	spell_defs map[string]spell // TODO: initialize
+	spell_defs map[string]Spell // TODO: initialize
 }
 
-type player_state struct {
+type Player_State struct {
 	hp              int
-	gesture_history gesture_chain
+	gesture_history Gesture_Chain
 	// controlled monsters
 	// effects
 }
 
-type spell struct {
+type Spell struct {
 	name           string
-	incantation    gesture_chain
-	result         []effect
+	incantation    Gesture_Chain
+	result         []Effect
 	is_enchantment bool
 }
 
-type gesture_chain [][2]maybe.Maybe[gesture]
+type Gesture_Chain [][2]maybe.Maybe[Gesture]
 
-type gesture int
+type Gesture int
 
 const (
-	fingers gesture = iota
+	fingers Gesture = iota
 	palm
 	snap
 	wave
@@ -42,11 +42,11 @@ const (
 	nothing
 )
 
-type effect int
+type Effect int
 
 const (
 	// mutex debuff group
-	amnesia effect = iota
+	amnesia Effect = iota
 	confusion
 	charm_person
 	charm_monster
@@ -70,8 +70,8 @@ const (
 	invisibility
 )
 
-func New_Game_State() *game_state {
-	g := new(game_state)
+func New_Game_State() *Game_State {
+	g := new(Game_State)
 
 	// initialize:
 	for i := 0; i < 2; i++ {
@@ -83,8 +83,8 @@ func New_Game_State() *game_state {
 	return g
 }
 
-func New_Player_State() *player_state {
-	p := new(player_state)
+func New_Player_State() *Player_State {
+	p := new(Player_State)
 
 	p.hp = 0xf
 
@@ -92,7 +92,7 @@ func New_Player_State() *player_state {
 }
 
 // String() returns a representation of the gamestate formatted for display
-func (g game_state) String() string {
+func (g Game_State) String() string {
 	// cruft:
 	// p0_left *uint64, p0_right *uint64, p1_left *uint64, p1_right *uint64
 
